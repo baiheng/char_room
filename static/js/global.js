@@ -1,4 +1,4 @@
-var g_host = "www.jiajiao1.com:8088";
+var g_host = "ip_address:8088";
 
 function log(msg){
 	console.log(msg);
