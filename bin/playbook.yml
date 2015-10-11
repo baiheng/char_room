@@ -1,0 +1,9 @@
+
+- hosts: local
+  tasks: 
+    - name: check out chat room
+      shell: 'cd /tmp/ && git clone https://github.com/baiheng/char_room.git'
+    - name: start chat room server
+      shell: /tmp/char_room/bin/start_server.sh
+    - name: start test
+      shell: /tmp/char_room/bin/start_test.sh

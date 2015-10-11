@@ -22,7 +22,7 @@ class ChatWebSocket(tornado.websocket.WebSocketHandler):
         self.set_nodelay(True)
         mylog.logger.debug("add ws user id %s" % id(self))
         ChatWebSocket.User.add(self)
-        self.write_message("<p>%s: %s</p>" % (id(self), "欢迎加入聊天室"))
+        self.write_message("%s: %s" % (id(self), "欢迎加入聊天室"))
 
     def on_close(self):
         mylog.logger.debug("remove ws user id %s" % id(self))
@@ -32,12 +32,12 @@ class ChatWebSocket(tornado.websocket.WebSocketHandler):
         mylog.logger.debug("ws receive msg from user id: %s msg: %s" % 
                 (id(self), msg))
         if msg == u"在线的用户数":
-            self.write_message("<p>在线的用户数: %s</p>" % 
+            self.write_message("在线的用户数: %s" % 
                     len(ChatWebSocket.User))
             return
         for i in ChatWebSocket.User:
             if i is not self:
-                i.write_message("<p>%s: %s</p>" % (id(self), msg))
+                i.write_message("%s: %s" % (id(self), msg))
 
 
 

@@ -46,7 +46,7 @@ $(document).ready(function(){
 		};
 		ws.onmessage = function(evt){
 			log("ws msg " + evt.data);
-			$("#id_chat_panel").append(evt.data);
+			$("#id_chat_panel").append("<p>" + evt.data + "</p>");
 			$('#id_chat_panel').scrollTop( $('#id_chat_panel')[0].scrollHeight );
 		};
 		ws.onclose = function(evt){
