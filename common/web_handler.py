@@ -6,7 +6,6 @@ import traceback
 from tornado.escape import utf8
 
 import mylog
-from sqlalchemy_ctl import session
 
 class WebHandler(tornado.web.RequestHandler):
     def initialize(self):
@@ -26,7 +25,6 @@ class WebHandler(tornado.web.RequestHandler):
         self.set_header('Content-Type', 'text/plain')
         if "exc_info" in kwargs:
             mylog.logger.error("%s" % "".join(traceback.format_exception(*kwargs["exc_info"])))
-        session.rollback()
         self.finish("500")
 
     def decode_argument(self, value, name=None):

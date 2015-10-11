@@ -5,8 +5,7 @@ import tornado.web
 import os
 
 import mylog
-import conf
-from handler import main_handler
+from handler import chat_websocket
 
 setting = dict(
     template_path = os.path.join(os.path.dirname(__file__),"template"),
@@ -16,6 +15,6 @@ setting = dict(
 
 application = tornado.web.Application(
     handlers = [
-        ("/tornado", main_handler.MainHandler),
+        ("/chat_websocket", chat_websocket.ChatWebSocket),
     ],
     **setting)

@@ -1,0 +1,18 @@
+body{
+	font-size: 12px;
+}
+
+.warn_modal{
+  display: none;
+  position:fixed;
+  top:50px;
+  left:50%;
+  min-height: 20px;
+  margin-left:-100px;
+  padding:2px;
+  width:200px;
+  text-align:center;
+  z-index:50000;
+  background-color:rgba(40,40,40,0.7);
+  color: rgb(255,255,255);
+}
