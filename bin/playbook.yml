@@ -3,11 +3,7 @@
   tasks: 
     - name: check out chat room
       shell: >
-        cd /tmp/ && 
         wget https://github.com/baiheng/chat_room/archive/master.zip && 
-        unzip master.zip && 
+        unzip -o master.zip && 
         rm /tmp/master.zip -rf
-    - name: start chat room server
-      shell: /tmp/chat_room-master/bin/start_server.sh
-    - name: start test
-      shell: /tmp/chat_room-master/bin/start_test.sh
+        chdir= /tmp/
