@@ -18,5 +18,8 @@
 #      REVISION:  ---
 #===============================================================================
 
-cd /tmp/chat_room/
+cd `pwd`
+cd ..
+echo `pwd`
+
 python ./server.py chat_room
