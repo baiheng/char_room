@@ -18,4 +18,5 @@
 #      REVISION:  ---
 #===============================================================================
 
-python ../server.py chat_room
+cd /tmp/chat_room/
+python ./server.py chat_room

@@ -2,8 +2,10 @@
 - hosts: local
   tasks: 
     - name: check out chat room
-      shell: 'cd /tmp/ && git clone https://github.com/baiheng/char_room.git'
+      shell: >
+        cd /tmp/ && wget https://github.com/baiheng/chat_room/archive/master.zip && unzip master.zip && 
+        cp /tmp/chat_room-master/ /tmp/chat_room/ -r && rm /tmp/master.zip /tmp/chat_room-master/ -rf
     - name: start chat room server
-      shell: /tmp/char_room/bin/start_server.sh
+      shell: /tmp/chat_room/bin/start_server.sh
     - name: start test
-      shell: /tmp/char_room/bin/start_test.sh
+      shell: /tmp/chat_room/bin/start_test.sh
